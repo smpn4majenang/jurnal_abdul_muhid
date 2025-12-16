@@ -21,26 +21,24 @@
         @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
         
         /* --- GAYA NOMOR 2 (INPUT / ISIAN) --- */
-        /* Font biasa (normal), ukuran standar, warna nyaman di mata */
         .form-input-custom {
             border-width: 2px;
-            border-color: #60a5fa; /* Blue-400: Garis tepi biru cerah tapi tidak menusuk */
-            color: #334155;        /* Slate-700: Warna teks abu tua, sangat nyaman dibaca */
-            font-weight: 400;      /* Normal (Biasa) */
-            font-size: 1rem;       /* Ukuran 16px (Standar) */
-            padding-top: 0.85rem;  /* Padding sedikit diperlega */
+            border-color: #60a5fa; /* Blue-400 */
+            color: #334155;        /* Slate-700 */
+            font-weight: 400;      
+            font-size: 1rem;       
+            padding-top: 0.85rem;  
             padding-bottom: 0.85rem;
             transition: all 0.3s ease;
             background-color: #ffffff;
         }
         .form-input-custom:focus {
-            border-color: #2563eb; /* Blue-600 saat aktif */
+            border-color: #2563eb; /* Blue-600 */
             outline: none;
-            background-color: #eff6ff; /* Background biru sangat muda saat diketik */
-            color: #0f172a; /* Warna teks menjadi lebih gelap sedikit saat fokus */
+            background-color: #eff6ff; /* Background biru muda */
+            color: #0f172a; 
             box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.1), 0 2px 4px -1px rgba(59, 130, 246, 0.06);
         }
-        /* Style khusus saat disabled (seperti saat loading) */
         .form-input-custom:disabled {
             background-color: #f1f5f9;
             border-color: #cbd5e1;
@@ -49,14 +47,13 @@
         }
 
         /* --- GAYA NOMOR 1 (LABEL / JUDUL PERTANYAAN) --- */
-        /* Font Besar, Bold, Warna Biru */
         .form-label-custom {
-            font-size: 1.25rem;    /* Lebih besar (setara 20px) */
-            font-weight: 700;      /* Bold (Tebal) */
-            color: #1e40af;        /* Blue-800: Biru Tua Tegas */
+            font-size: 1.25rem;    
+            font-weight: 700;      
+            color: #1e40af;        /* Blue-800 */
             margin-bottom: 0.5rem;
             display: block;
-            letter-spacing: 0.01em; /* Sedikit jarak antar huruf agar elegan */
+            letter-spacing: 0.01em; 
         }
 
         /* Checkbox Custom Style inside Dropdown */
@@ -83,10 +80,9 @@
         }
         .custom-checkbox span {
             font-size: 0.95rem;
-            color: #475569; /* Slate-600 */
+            color: #475569; 
             font-weight: 500;
         }
-        /* Highlight text saat dicentang */
         .custom-checkbox input:checked + span {
             color: #1e40af;
             font-weight: 600;
@@ -122,6 +118,7 @@
                 <div class="mb-8">
                     <label class="form-label-custom">Nama Guru</label>
                     <div class="relative">
+                        <!-- Added 'appearance-none' -->
                         <select name="Nama Guru" id="namaGuru" required class="form-input-custom block w-full pl-5 pr-12 rounded-xl appearance-none cursor-pointer">
                             <option value="" disabled selected>Menunggu data...</option>
                         </select>
@@ -136,7 +133,8 @@
                     <div>
                         <label class="form-label-custom">Kelas</label>
                         <div class="relative">
-                            <select name="Kelas" id="kelasSelect" required class="form-input-custom block w-full pl-5 pr-12 rounded-xl cursor-pointer" disabled>
+                            <!-- Added 'appearance-none' -->
+                            <select name="Kelas" id="kelasSelect" required class="form-input-custom block w-full pl-5 pr-12 rounded-xl cursor-pointer appearance-none" disabled>
                                 <option value="" disabled selected>Menunggu data...</option>
                             </select>
                             <div class="absolute inset-y-0 right-0 flex items-center px-4 pointer-events-none text-blue-500">
@@ -149,7 +147,8 @@
                     <div>
                         <label class="form-label-custom">Hari</label>
                         <div class="relative">
-                            <select name="Hari" id="hariSelect" required class="form-input-custom block w-full pl-5 pr-12 rounded-xl cursor-pointer">
+                            <!-- Added 'appearance-none' -->
+                            <select name="Hari" id="hariSelect" required class="form-input-custom block w-full pl-5 pr-12 rounded-xl cursor-pointer appearance-none">
                                 <option value="Senin">Senin</option>
                                 <option value="Selasa">Selasa</option>
                                 <option value="Rabu">Rabu</option>
@@ -222,7 +221,8 @@
                 <div class="mb-8">
                     <label class="form-label-custom">Mata Pelajaran</label>
                     <div class="relative">
-                        <select name="Mata Pelajaran" id="mapelSelect" required class="form-input-custom block w-full pl-5 pr-12 rounded-xl cursor-pointer" disabled>
+                        <!-- Added 'appearance-none' -->
+                        <select name="Mata Pelajaran" id="mapelSelect" required class="form-input-custom block w-full pl-5 pr-12 rounded-xl cursor-pointer appearance-none" disabled>
                             <option value="" disabled selected>Menunggu data...</option>
                         </select>
                         <div class="absolute inset-y-0 right-0 flex items-center px-4 pointer-events-none text-blue-500">
@@ -298,13 +298,11 @@
 
     <script>
         // --- KONFIGURASI SPREADSHEET (SUMBER DATA DROPDOWN) ---
-        // ID ini dipakai untuk mengambil daftar Guru dan Siswa
         const SHEET_ID = '1_SWB7qPQ49P95tA7UeXk3qMFwzi-tHHgj5K3yNddOc8';
         const SHEET_NAME_DATA = 'Data';  
         const SHEET_NAME_SISWA = 'Kelas'; 
 
         // --- KONFIGURASI SCRIPT (TUJUAN PENYIMPANAN DATA) ---
-        // Pastikan Anda sudah Deploy ulang Kode.gs dengan ID Spreadsheet Baru!
         const scriptURL = 'https://script.google.com/macros/s/AKfycbyERWEnQY6FHzXITzUXmtUUQyTc96AxVF3m4ZfWZJLb3RZ2aCXcRLwnhAIZYMLaclZ3Bw/exec';
 
         let allStudentsData = []; 
@@ -499,6 +497,7 @@
 
         const normalize = str => str ? str.toString().toLowerCase().replace(/\s/g, '') : '';
 
+        // --- FILTER SISWA BERDASARKAN KELAS ---
         document.getElementById('kelasSelect').addEventListener('change', function() {
             const selectedClass = this.value;
             const btnAddSiswa = document.getElementById('btnAddSiswa');
